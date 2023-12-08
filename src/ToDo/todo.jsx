@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "../";
-import Card from "./Componentes/Card";
+import { Link, useNavigate } from "react-router-dom";
+
+import Card from "../Componentes/Card";
 
 
 export default function Todo() {
+    
     const listaLocalStorage = JSON.parse(localStorage.getItem("Listas")) || [];
     const [titulo, setTitulo] = useState("")
     const [descricao, setDescricao] = useState("")
@@ -14,16 +15,19 @@ export default function Todo() {
 
     useEffect(() => { localStorage.setItem("Listas", JSON.stringify(listas)) }, [listas])
 
-    const salvar = (salve) => {
+const navigate = useNavigate()
+
+
+    const salvar = async (salve) => {
         salve.preventDefault()
-        setListas([...listas, {
+        await setListas([...listas, {
             titulo: titulo,
             descricao: descricao,
             identidade: identidade,
             link: link
         }])
-        setIdentidade(identidade + 1)
-        setNome("")
+        await setIdentidade(identidade + 1)
+        navigate("/")
 
         console.log(listas)
 
@@ -40,11 +44,12 @@ export default function Todo() {
                     <br />
                     <h2>Insira o titulo do Vídeo:</h2>
                     <input type="text" onChange={(e) => { setTitulo(e.target.value) }}></input>
-                    <h2>Insira a descrição do vídeo:</h2>
-                    
-                    <input type="text" onChange={(e) => { setDescricao(e.target.value) }}></input>
-                    <h2>Insira a url do vídeo:</h2>
 
+                   
+                    <h2>Insira a descrição do vídeo:</h2>
+                    <input type="text" onChange={(e) => { setDescricao(e.target.value) }}></input>
+                    
+                    <h2>Insira a url do vídeo:</h2>
                     <input type="text" onChange={(e) => { setLink(e.target.value) }}></input>
                     <button>Enviar</button>
                 </div>
@@ -52,34 +57,14 @@ export default function Todo() {
 
             </form>
 
-            {listas.map((atv) =>
-                <main key={atv.identidade}>
-                    <ul >
-                        <Link to={`${atv.identidade}`}>
-                            <div className="card">
 
-                                <h1>{atv.titulo}</h1>
-                                <h3>{atv.descricao}</h3>
-
-                                <iframe 
-                                    width="930" 
-                                    height="523"
-                                    src={`https://www.youtube.com/embed/${atv.link.slice(17)}`}
-                                    title= "Vídeo"
-                                    frameborder={0} 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen>
-                                </iframe>
-
-                                
-                            </div>
-                        </Link>
-                    </ul>
-                </main>
-
-            )}
             
-            <footer>AAAAAA</footer>
+            <footer>
+                <ul>
+                    <li><a href="/todo">Cadastrar</a></li>
+                    <li><a href="/">Vídeos</a></li>
+                </ul>
+            </footer>
         </div>
 
     );

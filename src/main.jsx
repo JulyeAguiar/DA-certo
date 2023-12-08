@@ -9,7 +9,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/todo" element={<Todo />}>Pinoia</Route>
         <Route path="/" element={<Home />}>Pinoia</Route>
-        // <Route path="/detalhe:identidade" element={<Detalhe />}>Pinoia</Route>
+        {/* // <Route path="/detalhe:identidade" element={<Detalhe />}>Pinoia</Route> */}
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
