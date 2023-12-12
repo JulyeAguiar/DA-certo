@@ -8,7 +8,7 @@ export default function Destaques() {
   const listaLocalStorage = JSON.parse(localStorage.getItem("Listas")) || [];
   console.log(listaLocalStorage)
   return (
-    
+
     <div>
 
       <nav>
@@ -18,7 +18,7 @@ export default function Destaques() {
           <li><a href="/destaque">destaque</a></li>
         </ul>
       </nav>
-      
+
       {listaLocalStorage.slice(-4).map((video) => <Card video={video} />)}
 
     </div>

@@ -8,7 +8,7 @@ import Detalhe from './Componentes/detalhe'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <BrowserRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/todo" element={<Todo />}></Route>
         <Route path="/" element={<Home />}></Route>
