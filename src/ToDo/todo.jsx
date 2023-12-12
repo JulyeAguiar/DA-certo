@@ -45,7 +45,6 @@ const navigate = useNavigate()
                     <h2>Insira o titulo do Vídeo:</h2>
                     <input type="text" onChange={(e) => { setTitulo(e.target.value) }}></input>
 
-                   
                     <h2>Insira a descrição do vídeo:</h2>
                     <input type="text" onChange={(e) => { setDescricao(e.target.value) }}></input>
                     
@@ -59,12 +58,13 @@ const navigate = useNavigate()
 
 
             
-            <footer>
+            <nav>
                 <ul>
                     <li><a href="/todo">Cadastrar</a></li>
                     <li><a href="/">Vídeos</a></li>
+                    <li><a href="/destaque">destaque</a></li>
                 </ul>
-            </footer>
+            </nav>
         </div>
 
     );

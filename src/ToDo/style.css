@@ -1,6 +1,8 @@
 body {
-    background-color: #ffffff;
-    }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
   
     main{
       display: flex;
@@ -8,18 +10,6 @@ body {
       margin: 50px;
       justify-content: space-evenly;
     }
-  
-    .card{
-      margin: 30px;
-      background-color: #f6a998;
-      border: 1px solid #f38b74;
-      display: inline-block;
-      overflow: hidden;
-      height: 500px;
-      width: 500px;
-      
-    }
-    
   
   .form-container {
     max-width: 500px;
@@ -45,13 +35,60 @@ body {
     border-radius: 5px;
   }
   
-  footer{
+
+  
+  nav{
     top: 0;
     font-size: 17px;
-    background-color: #ffffff;
+    background-color: #f7f4ed;
     width: 1550px;
     height: 60px;
     filter: drop-shadow(0px 1px 1px #aeaeae);
     position: fixed;
+    z-index: 1;
+  }
+
+  
+  nav ul{
+    list-style: none;
+    margin: 0px 15px 50px;
+    padding: 1px 0px;
   }
   
+  nav li{
+    display: inline;
+    padding-right: 20px;
+  }
+
+
+.video-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
+  justify-content: space-evenly;
+}
+
+.video {
+    width: 300px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    overflow: hidden;
+}
+
+.tela {
+    width: 100%;
+    height: auto;
+}
+
+.video-info {
+    padding: 10px;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 0;
+}

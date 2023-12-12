@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./home.css";
+import Card from "../Componentes/Card";
+import "./style.css";
 
-import Card from "./Componentes/Card";
 
-
-export default function Home() {
+export default function Destaques() {
   const listaLocalStorage = JSON.parse(localStorage.getItem("Listas")) || [];
   console.log(listaLocalStorage)
   return (
@@ -20,7 +19,7 @@ export default function Home() {
         </ul>
       </nav>
       
-      {listaLocalStorage.map((video) => <Card video={video} />)}
+      {listaLocalStorage.slice(-4).map((video) => <Card video={video} />)}
 
     </div>
   )
