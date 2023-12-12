@@ -22,7 +22,7 @@ export default function Card({ video }) {
             </div>
 
             <Link to={`/detalhe/:identidade${video.identidade}`}>
-                <li>{video.titulo}</li>
+                Detalhes...
             </Link>
         </div>
     )
